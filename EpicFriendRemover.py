@@ -1,3 +1,5 @@
+import traceback
+
 import pyautogui
 import os
 import sys
@@ -103,7 +105,13 @@ if __name__ == "__main__":
     time.sleep(5)
 
     while True:
-        remove_friend(location, delay)
-        print(f"Friend removed. Next friend in {delay} second.")
-        time.sleep(delay)
+        try:
+            remove_friend(location, delay)
+            print(f"Friend removed. Next friend in {delay} second.")
+            time.sleep(delay)
+        except Exception as e:
+            print(traceback.format_exc())
+            print("An error occurred. Please check the console for more information.")
+            input("Press enter to exit.")
+
 
