@@ -1,8 +1,15 @@
 import pyautogui
 import os
+import sys
 import time
 import keyboard
 
+
+# Get the directory where the script/executable is located
+base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+
+# Construct the absolute path to the file
+file_path = os.path.join(base_path, 'assets', 'ascii.txt')
 
 # Path to the assets folder containing the screenshots of all buttons
 assets_path = './assets/{lang}/'
@@ -76,8 +83,10 @@ def remove_friend(location, delay):
 
 if __name__ == "__main__":
     # print the ascii art
-    with open("assets/ascii.txt", "r") as f:
-        print(f.read())
+    #with open("assets/ascii.txt", "r") as f:
+    #    print(f.read())
+
+    print("gamer")
 
     print("EpicGames Friend Remover v0.2 by myenv")
     input("Please open the Epic Games Launcher and navigate to the Friends tab. "
